@@ -1,32 +1,41 @@
 var axios = require('axios');
-const db = require('../../config/db')
+const db = require('../../config/db');
+
 
 exports.accessControl = (req, res, next) => {
     console.log("============== accessControl Call ======================");
-
+    console.log("db >>> ", db);
     req.session.token = "smzH^8^N9}N`B[t."; //개발 테스트용 운영 반영 시 삭제
     // 토큰 가져오기
     let sql = "SELECT MEMO FROM BICM010 ";
     sql += "WHERE GBNCD = 'M0001' ";
 
-    axios.get(db.DB_URL + '?q=' + encodeURIComponent(sql)).then(x => x.data).then(reault => {    
-      if (reault.MACHBASE_ERROR) {
-        res.status(400).send("확인이 필요합니다.");
-      } else {
-        if (reault.MEMO == req.session.token) {
-            res.send("OK")
-        } else {
-          if (reault.MEMO) {
-            res.status(403).send("접속권한이 없습니다.");
-          } else {
-            res.status(401).send("TOKEN 정보가 없습니다.");
-          }
-        }
-      }
-    },
-    reject =>{
-        res.status(500).send("DB접속이 불가합니다. DB확인 후 다시 시도해 주시기 바랍니다.");
-    })
+    axios.get(db.DB_URL + '?q=' + encodeURIComponent(sql))
+        .then(x => {
+            console.log("accessControl then1 >>> ", x.data);
+            return x.data;
+        })
+        .then(reault => {
+            console.log("accessControl then2 >>> ", reault);
+
+            if (reault.MACHBASE_ERROR) {
+                res.status(400).send("확인이 필요합니다.");
+            } else {
+                if (reault.MEMO == req.session.token) {
+                    res.send("OK")
+                } else {
+                if (reault.MEMO) {
+                    res.status(403).send("접속권한이 없습니다.");
+                } else {
+                    res.status(401).send("TOKEN 정보가 없습니다.");
+                }
+                }
+            }
+        })
+        .catch(reject => {
+            console.log("accessControl >>> ", reject);
+            res.status(500).send("DB접속이 불가합니다. DB확인 후 다시 시도해 주시기 바랍니다.");
+    });
 };
 
 exports.getAssignedMenuList = (req, res, next) => {
