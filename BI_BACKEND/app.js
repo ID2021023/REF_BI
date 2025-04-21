@@ -6,6 +6,7 @@ var boolParser = require('express-query-boolean');
 var session = require('express-session');
 var logger = require('morgan');
 var cors = require('cors');
+const winstonLogger = require('./config/logger');
 
 var indexRouter = require('./routes/index');
 var apiRouter = require('./routes/api');
@@ -27,7 +28,19 @@ app.use(cors());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
+// 로깅 미들웨어 설정
 app.use(logger('dev'));
+app.use((req, res, next) => {
+    // API 요청만 로깅
+    if (req.path.startsWith('/api')) {
+        winstonLogger.info(`${req.method} ${req.url}`, {
+            ip: req.ip,
+            query: req.query
+        });
+    }
+    next();
+});
+
 app.use(express.json({ limit : "50mb" })); 
 app.use(express.urlencoded({ limit:"50mb", extended: false }));
 app.use(cookieParser());
@@ -55,6 +68,12 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
+  winstonLogger.error('에러 발생', {
+    error: err.message,
+    path: req.path,
+    method: req.method
+  });
+
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
