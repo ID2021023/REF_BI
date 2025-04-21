@@ -1,0 +1,31 @@
+BIPU012 (Log Table)
+
+[ COLUMN ]
+----------------------------------------------------------------
+NAME                          TYPE                LENGTH
+----------------------------------------------------------------
+COLLECTOR_NAME                VARCHAR             40
+COLLECTOR_ADDR                IPV4                15
+COLLECTOR_OFFSET_STRING       VARCHAR             23
+SNO                           LONG                20
+COMCD                         VARCHAR             5
+SUCD                          VARCHAR             5
+BRCD                          VARCHAR             5
+YSCD                          VARCHAR             10
+YEAR                          VARCHAR             10
+SEASON                        VARCHAR             10
+SOJAE                         VARCHAR             10
+SOJAENM                       VARCHAR             30
+YSMODEL                       LONG                20
+YSQTY                         LONG                20
+YSAMT                         LONG                20
+ORQTY                         LONG                20
+ORAMT                         LONG                20
+INQTY                         LONG                20
+INAMT                         LONG                20
+OUTQTY                        LONG                20
+OUTAMT                        LONG                20
+STOCKQTY                      LONG                20
+STOCKAMT                      LONG                20
+GUBUN                         VARCHAR             1
+CREATEDATE                    DATETIME            31

@@ -1,0 +1,20 @@
+BISL010 (Log Table)
+
+[ COLUMN ]
+----------------------------------------------------------------
+NAME                          TYPE                LENGTH
+----------------------------------------------------------------
+COLLECTOR_NAME                VARCHAR             40
+COLLECTOR_ADDR                IPV4                15
+COLLECTOR_OFFSET_STRING       VARCHAR             23
+SNO                           LONG                20
+COMCD                         VARCHAR             5
+SUCD                          VARCHAR             5
+BRCD                          VARCHAR             5
+YYYYMMDD                      VARCHAR             8
+COMNM                         VARCHAR             50
+SUNM                          VARCHAR             30
+BRNM                          VARCHAR             30
+BRSNM                         VARCHAR             20
+AMT                           LONG                20
+CREATEDATE                    DATETIME            31

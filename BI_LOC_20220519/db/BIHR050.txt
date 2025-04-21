@@ -1,0 +1,76 @@
+BIHR050 (Log Table)
+
+[ COLUMN ]
+----------------------------------------------------------------
+NAME                          TYPE                LENGTH
+----------------------------------------------------------------
+COLLECTOR_NAME                VARCHAR             40
+COLLECTOR_ADDR                IPV4                15
+COLLECTOR_OFFSET_STRING       VARCHAR             23
+CREATEDATE                    DATETIME            31
+SNO                           LONG                20
+HRID                          VARCHAR             8
+SI                            VARCHAR             30
+GUN                           VARCHAR             30
+GU                            VARCHAR             30
+NAME                          VARCHAR             20
+BIRTHYEAR                     VARCHAR             4
+PHONE                         VARCHAR             13
+PHOTOPATH                     VARCHAR             100
+COMPANYCD                     VARCHAR             10
+COMPANYNM                     VARCHAR             30
+JAEJIGCD                      VARCHAR             10
+JAEJIGNM                      VARCHAR             10
+SUCD                          VARCHAR             5
+SUNM                          VARCHAR             30
+BRCD                          VARCHAR             5
+BRNM                          VARCHAR             30
+VDCD                          VARCHAR             10
+VDNM                          VARCHAR             50
+VDSNM                         VARCHAR             50
+CHGUCD                        VARCHAR             10
+CHGUNM                        VARCHAR             20
+CAREER                        VARCHAR             1000
+TWOAVGAMT                     LONG                20
+ONEAVGAMT                     LONG                20
+AVGAMT                        LONG                20
+AMTRATINGCD                   VARCHAR             10
+AMTRATINGNM                   VARCHAR             5
+TOTGRADE                      VARCHAR             1000
+AMTGRADE                      SHORT               6
+STKGRADE                      SHORT               6
+COMGRADE                      SHORT               6
+VISGRADE                      SHORT               6
+MNGGRADE                      SHORT               6
+REGDEPTCD                     VARCHAR             5
+REGDEPTNM                     VARCHAR             20
+REGNAME                       VARCHAR             20
+REGCOMMENT                    VARCHAR             1000
+STDT                          VARCHAR             8
+EMAIL                         VARCHAR             50
+MARRYYN                       VARCHAR             1
+ONLINEGU                      VARCHAR             1
+REGTEL                        VARCHAR             13
+POSITNCD                      VARCHAR             10
+POSITNNM                      VARCHAR             20
+REGPHONE                      VARCHAR             13
+UPDDT                         DATETIME            31
+REGDT                         DATETIME            31
+CHGUMGNORMAL                  VARCHAR             5
+CHGUMGEVENT                   VARCHAR             5
+SDMGNORMAL                    VARCHAR             5
+SDMGEVENT                     VARCHAR             5
+SDMGONLINE                    VARCHAR             5
+SDMGTRUST                     VARCHAR             5
+SEC_CASH                      VARCHAR             20
+SEC_INSU                      VARCHAR             20
+BUYER                         VARCHAR             1000
+CHGUCOM                       VARCHAR             50
+STORENM                       VARCHAR             100
+
+[ INDEX ]
+----------------------------------------------------------------
+NAME                          TYPE                COLUMN
+----------------------------------------------------------------
+IDX_BIHR050_CREATEDATE        LSM                 CREATEDATE
+IDX_BIHR050_SNO               LSM                 SNO

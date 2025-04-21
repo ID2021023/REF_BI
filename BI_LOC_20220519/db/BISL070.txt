@@ -1,0 +1,42 @@
+BISL070 (Log Table)
+
+[ COLUMN ]
+----------------------------------------------------------------
+NAME                          TYPE                LENGTH
+----------------------------------------------------------------
+COLLECTOR_NAME                VARCHAR             40
+COLLECTOR_ADDR                IPV4                15
+COLLECTOR_OFFSET_STRING       VARCHAR             23
+SNO                           LONG                20
+COMCD                         VARCHAR             5
+SUCD                          VARCHAR             5
+BRCD                          VARCHAR             5
+VDCD                          VARCHAR             10
+SALEDT                        VARCHAR             8
+SUNM                          VARCHAR             30
+VDNM                          VARCHAR             50
+VDSNM                         VARCHAR             50
+OPENDT                        VARCHAR             8
+SHUTDT                        VARCHAR             8
+SHGU                          VARCHAR             5
+SHGUNM                        VARCHAR             50
+SHTP                          VARCHAR             5
+SHTPNM                        VARCHAR             50
+VVDCDGB                       VARCHAR             5
+VSHTPNM                       VARCHAR             50
+USEYN                         VARCHAR             1
+SHUTYN                        VARCHAR             1
+MVDCD                         VARCHAR             10
+SILAMT                        LONG                20
+SQTY                          LONG                20
+CREATEDATE                    DATETIME            31
+
+[ INDEX ]
+----------------------------------------------------------------
+NAME                          TYPE                COLUMN
+----------------------------------------------------------------
+IDX_BISL070_COMCD             LSM                 COMCD
+IDX_BISL070_SUCD              LSM                 SUCD
+IDX_BISL070_BRCD              LSM                 BRCD
+IDX_BISL070_VDCD              LSM                 VDCD
+IDX_BISL070_SALEDT            LSM                 SALEDT

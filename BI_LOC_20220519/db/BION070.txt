@@ -1,0 +1,28 @@
+BION070 (Log Table)
+
+[ COLUMN ]
+----------------------------------------------------------------
+NAME                          TYPE                LENGTH
+----------------------------------------------------------------
+COLLECTOR_NAME                VARCHAR             40
+COLLECTOR_ADDR                IPV4                15
+COLLECTOR_OFFSET_STRING       VARCHAR             23
+SNO                           LONG                20
+SUCD                          VARCHAR             5
+BRCD                          VARCHAR             5
+ORDER_DT                      VARCHAR             8
+BRAND_MNG_IDX                 VARCHAR             10
+FORMAL_DIV                    VARCHAR             2
+ORDER_QTY                     LONG                20
+ORDER_AMT                     LONG                20
+CANCEL_QTY                    LONG                20
+CANCEL_AMT                    LONG                20
+RETURN_QTY                    LONG                20
+RETURN_AMT                    LONG                20
+SELL_QTY                      LONG                20
+SELL_AMT                      LONG                20
+COUPON_DISCNT_AMT             LONG                20
+POINT_DISCNT_AMT              LONG                20
+SHIP_AMT                      LONG                20
+PAY_AMT                       LONG                20
+CREATEDATE                    DATETIME            31

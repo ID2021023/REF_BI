@@ -1,0 +1,37 @@
+BISL061 (Log Table)
+
+[ COLUMN ]
+----------------------------------------------------------------
+NAME                          TYPE                LENGTH
+----------------------------------------------------------------
+COLLECTOR_NAME                VARCHAR             40
+COLLECTOR_ADDR                IPV4                15
+COLLECTOR_OFFSET_STRING       VARCHAR             23
+SNO                           LONG                20
+COMCD                         VARCHAR             5
+SUCD                          VARCHAR             5
+SALEDT                        VARCHAR             8
+COMNM                         VARCHAR             50
+SUNM                          VARCHAR             30
+SALEYOIL                      VARCHAR             10
+TARGETAMT                     INTEGER             11
+JQTY                          INTEGER             11
+JAMT                          LONG                20
+DCQTY                         INTEGER             11
+DCAMT                         LONG                20
+GQTY                          INTEGER             11
+GAMT                          LONG                20
+JSQTY                         LONG                20
+JSAMT                         LONG                20
+DCSQTY                        LONG                20
+DCSAMT                        LONG                20
+GSQTY                         LONG                20
+GSAMT                         LONG                20
+JRQTY                         LONG                20
+JRAMT                         LONG                20
+DCRQTY                        LONG                20
+DCRAMT                        LONG                20
+GRQTY                         LONG                20
+GRAMT                         LONG                20
+ADVDEPAMT                     LONG                20
+CREATEDATE                    DATETIME            31

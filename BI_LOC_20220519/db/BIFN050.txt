@@ -1,0 +1,46 @@
+BIFN050 (Log Table)
+
+[ COLUMN ]
+----------------------------------------------------------------
+NAME                          TYPE                LENGTH
+----------------------------------------------------------------
+COLLECTOR_NAME                VARCHAR             40
+COLLECTOR_ADDR                IPV4                15
+COLLECTOR_OFFSET_STRING       VARCHAR             23
+SNO                           LONG                20
+YYYY                          VARCHAR             4
+MM                            VARCHAR             2
+REGGBN                        VARCHAR             5
+SECGBN                        VARCHAR             2
+COMCD                         VARCHAR             5
+COMNM                         VARCHAR             50
+SUCD                          VARCHAR             5
+SUNM                          VARCHAR             30
+BRCD                          VARCHAR             5
+BRNM                          VARCHAR             30
+CHNL                          VARCHAR             2
+CHNLNM                        VARCHAR             30
+PLNQTY                        FLOAT               17
+PLNAMT                        LONG                20
+RSLTQTY                       FLOAT               17
+RSLTAMT                       LONG                20
+LMPLNQTY                      FLOAT               17
+LMPLNAMT                      LONG                20
+LMRSLTQTY                     FLOAT               17
+LMRSLTAMT                     LONG                20
+LYPLNQTY                      FLOAT               17
+LYPLNAMT                      LONG                20
+LYRSLTQTY                     FLOAT               17
+LYRSLTAMT                     LONG                20
+SILAMT                        LONG                20
+TAGAMT                        LONG                20
+LMFOWSTQTY                    FLOAT               17
+LMNORSTQTY                    FLOAT               17
+LMFOWSTAMT                    LONG                20
+LMNORSTAMT                    LONG                20
+FOWSTQTY                      FLOAT               17
+NORSTQTY                      FLOAT               17
+FOWSTAMT                      LONG                20
+NORSTAMT                      LONG                20
+CREATEDATE                    DATETIME            31
+REGEMPID                      VARCHAR             16

@@ -1,0 +1,22 @@
+BIWE051 (Log Table)
+
+[ COLUMN ]
+----------------------------------------------------------------
+NAME                          TYPE                LENGTH
+----------------------------------------------------------------
+COLLECTOR_NAME                VARCHAR             40
+COLLECTOR_ADDR                IPV4                15
+COLLECTOR_OFFSET_STRING       VARCHAR             23
+COMCD                         VARCHAR             5
+SUCD                          VARCHAR             5
+BRCD                          VARCHAR             5
+YYYY                          VARCHAR             4
+MM                            VARCHAR             2
+WEEK                          VARCHAR             2
+FROM_SALEDT                   VARCHAR             8
+TO_SALEDT                     VARCHAR             8
+SNO                           LONG                20
+PROGRESS                      VARCHAR             2000
+PLAN                          VARCHAR             2000
+CREATEDATE                    DATETIME            31
+TEMP_SAVE                     VARCHAR             5

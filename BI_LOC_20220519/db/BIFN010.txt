@@ -1,0 +1,29 @@
+BIFN010 (Log Table)
+
+[ COLUMN ]
+----------------------------------------------------------------
+NAME                          TYPE                LENGTH
+----------------------------------------------------------------
+COLLECTOR_NAME                VARCHAR             40
+COLLECTOR_ADDR                IPV4                15
+COLLECTOR_OFFSET_STRING       VARCHAR             23
+SNO                           LONG                20
+REGDT                         DATETIME            31
+REGEMPID                      VARCHAR             16
+UPDDT                         DATETIME            31
+UPDEMPID                      VARCHAR             16
+YYYY                          VARCHAR             4
+ACCTCD                        VARCHAR             8
+ACCTNM                        VARCHAR             20
+ACCTLV1                       VARCHAR             2
+ACCTLV1NM                     VARCHAR             20
+ACCTLV2                       VARCHAR             2
+ACCTLV2NM                     VARCHAR             20
+ACCTLV3                       VARCHAR             2
+ACCTLV3NM                     VARCHAR             20
+ACCTLV4                       VARCHAR             2
+ACCTLV4NM                     VARCHAR             20
+SORTORD                       SHORT               6
+DSPTYPE                       VARCHAR             2
+USEYN                         VARCHAR             1
+MEMO                          VARCHAR             400

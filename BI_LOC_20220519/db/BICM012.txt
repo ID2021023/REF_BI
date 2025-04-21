@@ -1,0 +1,18 @@
+BICM012 (Log Table)
+
+[ COLUMN ]
+----------------------------------------------------------------
+NAME                          TYPE                LENGTH
+----------------------------------------------------------------
+COLLECTOR_NAME                VARCHAR             40
+COLLECTOR_ADDR                IPV4                15
+COLLECTOR_OFFSET_STRING       VARCHAR             23
+SNO                           LONG                20
+MENUCD                        VARCHAR             10
+GBNCD                         VARCHAR             10
+MCODE                         VARCHAR             10
+VIEWYN                        VARCHAR             1
+REGDT                         DATETIME            31
+REGEMPID                      VARCHAR             16
+UPDDT                         DATETIME            31
+UPDEMPID                      VARCHAR             16

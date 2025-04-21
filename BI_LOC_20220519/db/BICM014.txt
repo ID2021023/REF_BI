@@ -1,0 +1,15 @@
+BICM014 (Log Table)
+
+[ COLUMN ]
+----------------------------------------------------------------
+NAME                          TYPE                LENGTH
+----------------------------------------------------------------
+COLLECTOR_NAME                VARCHAR             40
+COLLECTOR_ADDR                IPV4                15
+COLLECTOR_OFFSET_STRING       VARCHAR             23
+SNO                           LONG                20
+SIDO                          VARCHAR             50
+SGU                           VARCHAR             50
+X                             VARCHAR             20
+Y                             VARCHAR             20
+CREATEDATE                    DATETIME            31

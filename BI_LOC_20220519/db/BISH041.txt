@@ -1,0 +1,44 @@
+BISH041 (Log Table)
+
+[ COLUMN ]
+----------------------------------------------------------------
+NAME                          TYPE                LENGTH
+----------------------------------------------------------------
+COLLECTOR_NAME                VARCHAR             40
+COLLECTOR_ADDR                IPV4                15
+COLLECTOR_OFFSET_STRING       VARCHAR             23
+SNO                           LONG                20
+VDCD                          VARCHAR             10
+COMCD                         VARCHAR             5
+SUCD                          VARCHAR             5
+BRCD                          VARCHAR             5
+SALEYY                        VARCHAR             4
+SALEMM                        VARCHAR             2
+COMNM                         VARCHAR             50
+SUNM                          VARCHAR             30
+BRNM                          VARCHAR             30
+VDNM                          VARCHAR             50
+VDSNM                         VARCHAR             25
+TSAMT                         LONG                20
+LMTSAMT                       LONG                20
+LTSAMT                        LONG                20
+ADVDEPAMT                     LONG                20
+GAMT                          LONG                20
+LMGAMT                        LONG                20
+LGAMT                         LONG                20
+TTAGPRI                       LONG                20
+SJAMT                         LONG                20
+SDCAMT                        LONG                20
+SGAMT                         LONG                20
+RJAMT                         LONG                20
+RDCAMT                        LONG                20
+RGAMT                         LONG                20
+INQTY                         LONG                20
+OUTQTY                        LONG                20
+STOCKQTY                      LONG                20
+TQTY                          LONG                20
+SQTY                          LONG                20
+RQTY                          LONG                20
+ONSAMT                        LONG                20
+CREATEDATE                    DATETIME            31
+MVDCD                         VARCHAR             10

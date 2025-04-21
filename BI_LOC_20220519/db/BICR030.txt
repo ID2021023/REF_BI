@@ -1,0 +1,25 @@
+BICR030 (Log Table)
+
+[ COLUMN ]
+----------------------------------------------------------------
+NAME                          TYPE                LENGTH
+----------------------------------------------------------------
+COLLECTOR_NAME                VARCHAR             40
+COLLECTOR_ADDR                IPV4                15
+COLLECTOR_OFFSET_STRING       VARCHAR             23
+SNO                           LONG                20
+COMCD                         VARCHAR             5
+COMNM                         VARCHAR             50
+SUCD                          VARCHAR             5
+SUNM                          VARCHAR             30
+BRCD                          VARCHAR             5
+BRNM                          VARCHAR             30
+CUSCD                         VARCHAR             20
+SALEYM                        VARCHAR             6
+SQTY                          LONG                20
+SAMT                          LONG                20
+SAMT_GU                       VARCHAR             2
+AGE                           SHORT               6
+AGE_GU                        VARCHAR             2
+ISSUE_YM                      VARCHAR             6
+CREATEDATE                    DATETIME            31

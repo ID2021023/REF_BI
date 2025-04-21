@@ -1,0 +1,71 @@
+.vdpOuterWrap.vdpFloating {
+    left: -90px !important;
+}
+
+.vdpComponent.vdpWithInput>input {
+    width: 100% !important;
+    padding-left: 7px;
+    padding-top: 15px;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.vdpComponent {
+    display: inline !important;
+}
+
+.vdpClearInput {
+    display: none !important;
+}
+
+.vdpCell.today {
+    color: #3f93f5;
+    font-weight: bold;
+}
+
+.teamSelector {
+    cursor: pointer !important;
+}
+
+.map_clusterer {
+    padding-top: 8px;
+    width: 80px;
+    height: 80px;
+    background: rgba(63, 147, 245, .95);
+    border-radius: 40px;
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+
+    .number {
+        font-size: 34px;
+        font-weight: 200;
+    }
+}
+
+.disable {
+    color: lightgray;
+    border-color: lightgray;
+}
+
+.button_checked {
+    border-color: #3f93f5;
+    background-color: #3f93f5;
+    color: #fff;
+}
+
+.tg_btn_select {
+    background-color: #252733;
+    color: #fff !important;
+}
+
+.list_card_maxWidth {
+    max-width: 303.33px;
+}
+
+.hidden {
+    pointer-events: none;
+ }

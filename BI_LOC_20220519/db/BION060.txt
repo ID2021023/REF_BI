@@ -1,0 +1,16 @@
+BION060 (Log Table)
+
+[ COLUMN ]
+----------------------------------------------------------------
+NAME                          TYPE                LENGTH
+----------------------------------------------------------------
+COLLECTOR_NAME                VARCHAR             40
+COLLECTOR_ADDR                IPV4                15
+COLLECTOR_OFFSET_STRING       VARCHAR             23
+SNO                           LONG                20
+SUCD                          VARCHAR             5
+BRCD                          VARCHAR             5
+VDCD                          VARCHAR             10
+SALEDT                        VARCHAR             8
+SILAMT                        LONG                20
+CREATEDATE                    DATETIME            31

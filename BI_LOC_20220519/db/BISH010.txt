@@ -1,0 +1,42 @@
+BISH010 (Log Table)
+
+[ COLUMN ]
+----------------------------------------------------------------
+NAME                          TYPE                LENGTH
+----------------------------------------------------------------
+COLLECTOR_NAME                VARCHAR             40
+COLLECTOR_ADDR                IPV4                15
+COLLECTOR_OFFSET_STRING       VARCHAR             23
+SNO                           LONG                20
+VDCD                          VARCHAR             10
+COMCD                         VARCHAR             5
+SUCD                          VARCHAR             5
+BRCD                          VARCHAR             5
+SUNM                          VARCHAR             30
+COMNM                         VARCHAR             50
+BRNM                          VARCHAR             30
+VDNM                          VARCHAR             50
+VDSNM                         VARCHAR             50
+OPENDT                        VARCHAR             8
+SHUTDT                        VARCHAR             8
+RENCD                         VARCHAR             10
+RENNM                         VARCHAR             30
+ZIPCODE                       VARCHAR             7
+ADDR1                         VARCHAR             200
+ADDR2                         VARCHAR             200
+LAT                           VARCHAR             20
+LNG                           VARCHAR             20
+TELNO                         VARCHAR             20
+VDFLR                         VARCHAR             8
+OPENTM                        VARCHAR             5
+CLOSETM                       VARCHAR             5
+SHGU                          VARCHAR             10
+SHGUNM                        VARCHAR             30
+SHTP                          VARCHAR             10
+SHTPNM                        VARCHAR             30
+VVDCDGB                       VARCHAR             10
+VVDCDGBNM                     VARCHAR             30
+USEYN                         VARCHAR             1
+SHUTYN                        VARCHAR             1
+CREATEDATE                    DATETIME            31
+MVDCD                         VARCHAR             10

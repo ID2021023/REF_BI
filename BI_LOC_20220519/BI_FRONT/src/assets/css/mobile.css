@@ -1,0 +1,210 @@
+@charset "UTF-8";
+.mobile_layout * {
+  font-size: 18px;
+}
+.mobile_layout.wrap {
+  min-width: 300px;
+  padding: 0;
+}
+.mobile_layout .header {
+  min-width: 100%;
+  min-height: 50px;
+  padding: 0;
+  background-color: #fff;
+}
+.mobile_layout .header .header_inner {
+  height: 50px;
+  padding: 0;
+  border-bottom: 1px solid #dee2e6;
+}
+.mobile_layout .header .header_inner .layout_title {
+  font-size: 1.091em;
+  font-family: "Nanum Barun Gothic", "나눔 바른 고딕", sans-serif;
+}
+.mobile_layout .header .header_inner .btn_close {
+  padding: 8px;
+}
+.mobile_layout .header .header_inner .btn_close [class*='-icons'] {
+  font-size: 1.9em;
+}
+.mobile_layout .container {
+  overflow-y: auto;
+  min-width: 100%;
+  height: calc(100% - 50px);
+}
+.mobile_layout .txt_bar {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 50px;
+  border-bottom: 1px solid #000;
+  background-color: #252733;
+  color: #fff;
+  text-align: center;
+}
+.mobile_layout .txt_bar .txt_date {
+  font-weight: 600;
+  font-size: 1.091em;
+  font-family: "Nanum Barun Gothic", "나눔 바른 고딕", sans-serif;
+  align-self: center;
+}
+.mobile_layout .txt_bar .ico_cal {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border: 0;
+  width: 50px;
+  border-left: 1px solid #000;
+  background-color: transparent;
+  color: #fff;
+  line-height: 48px;
+}
+.mobile_layout .txt_bar .ico_cal [class*='-icons'] {
+  font-size: 1.364em;
+}
+.mobile_layout .m_list {
+  overflow-y: auto;
+  height: calc(100% - 50px);
+  padding-top: 3px;
+}
+.mobile_layout .m_list .list > li {
+  background-color: #fff;
+}
+.mobile_layout .m_list .list > li .inner {
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 8px 12px;
+  border-top: 1px solid #dee2e6;
+}
+.mobile_layout .m_list .list > li .inner .chip {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 66px;
+  height: 66px;
+  border-color: #0954ac;
+  background-color: #0954ac;
+}
+.mobile_layout .m_list .list > li .inner .chip .chip_text {
+  color: #fff;
+  font-family: "Nanum Barun Gothic", "나눔 바른 고딕", sans-serif;
+  font-size: 0.818em;
+  line-height: 1.2;
+}
+.mobile_layout .m_list .list > li .inner .chip .chip_text .txt {
+  display: block;
+  font-size: 1.364em;
+  font-family: "GothamBold", "Nanum Barun Gothic", "나눔 바른 고딕", sans-serif;
+}
+.mobile_layout .m_list .list > li:last-child .inner {
+  border-bottom: 1px solid #dee2e6;
+}
+.mobile_layout .m_list .list > li .view {
+  text-align: right;
+}
+.mobile_layout .m_list .list > li .view .em_obj {
+  padding-bottom: 4px;
+  font-size: 2.000em;
+}
+.mobile_layout .m_list .list > li .view .em_obj .txt {
+  font-size: 0.545em;
+}
+.mobile_layout .m_list .list > li .view .list_obj {
+  justify-content: flex-end;
+}
+.mobile_layout .m_list .list > li .view .list_obj .tit {
+  height: 20px;
+  font-size: 0.682em;
+  line-height: 18px;
+}
+.mobile_layout .m_list .list > li .view .list_obj .txt {
+  color: #252733;
+  font-size: 1.091em;
+}
+.mobile_layout .m_list .list > li .list_box {
+  display: none;
+}
+.mobile_layout .m_list .list > li.on {
+  background-color: #3f93f5;
+}
+.mobile_layout .m_list .list > li.on .chip {
+  border-color: #fff;
+  background-color: transparent;
+}
+.mobile_layout .m_list .list > li.on .chip .chip_text {
+  color: #fff;
+}
+.mobile_layout .m_list .list > li.on .view .em_obj {
+  color: #fff;
+}
+.mobile_layout .m_list .list > li.on .view .list_obj .tit {
+  border-color: #fff;
+  color: #fff;
+}
+.mobile_layout .m_list .list > li.on .view .list_obj .txt {
+  color: #fff;
+}
+.mobile_layout .m_list .list > li.on .list_box {
+  display: block;
+  margin-bottom: 0;
+  padding: 3px;
+  background-color: transparent;
+  border-width: 1px 0;
+  border-color: rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+.mobile_layout .m_list .list > li.on .list_box .list_card {
+  flex-wrap: wrap;
+}
+.mobile_layout .m_list .list > li.on .list_box .list_card > li {
+  flex-basis: 50%;
+  min-height: 90px;
+  padding: 3px;
+}
+.mobile_layout .m_list .list > li.on .list_box .list_card > li .card_mini {
+  height: 100%;
+  margin: 0;
+  background-color: #fff;
+  border: 0;
+  border-radius: 3px;
+}
+.mobile_layout .m_list .list > li.on .list_box .list_card > li .card_mini .card_title .card_title_text {
+  padding: 12px 0;
+  font-weight: 600;
+  font-size: 1.091em;
+}
+.mobile_layout .m_list .list > li.on .list_box .list_card > li .card_mini .card_content {
+  letter-spacing: -1px;
+}
+.mobile_layout .m_list .list > li.on .list_box .list_card > li .card_mini .card_content .em_obj {
+  padding-top: 0;
+  font-size: 2.000em;
+}
+.mobile_layout .m_list .list > li.on .list_box .list_card > li .card_mini .card_content .em_obj .txt {
+  font-size: 0.455em;
+}
+.mobile_layout .m_list .list > li.on .list_box .list_card > li .card_mini .card_content .em_obj .txt2 {
+  font-size: 0.682em;
+}
+.mobile_layout .m_list .list > li.on .list_box .list_card > li .card_mini .chip {
+  width: 36px;
+  height: 36px;
+  line-height: 34px;
+}
+.mobile_layout .m_list .list > li.on .list_box .list_card > li .card_mini .chip .chip_text {
+  font-size: 0.682em;
+}
+.mobile_layout .m_list .list > li.on .list_box .btn_web {
+  margin: 12px 0;
+  border-color: #fff;
+  background-color: transparent;
+  color: #fff;
+  font-size: 0.818em;
+}
+.mobile_layout .m_list .list > li.on .list_box .btn_web [class*='icons'] {
+  font-size: 1em;
+}

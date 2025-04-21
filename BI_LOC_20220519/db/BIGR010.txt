@@ -1,0 +1,19 @@
+BIGR010 (Log Table)
+
+[ COLUMN ]
+----------------------------------------------------------------
+NAME                          TYPE                LENGTH
+----------------------------------------------------------------
+COLLECTOR_NAME                VARCHAR             40
+COLLECTOR_ADDR                IPV4                15
+COLLECTOR_OFFSET_STRING       VARCHAR             23
+SNO                           LONG                20
+EMPCD                         VARCHAR             20
+GBNCD                         VARCHAR             10
+GRTCD                         VARCHAR             10
+REFCD                         VARCHAR             10
+MCODE                         VARCHAR             10
+PROCD                         VARCHAR             20
+VIEWYN                        VARCHAR             1
+PRINTYN                       VARCHAR             1
+CREATEDATE                    DATETIME            31

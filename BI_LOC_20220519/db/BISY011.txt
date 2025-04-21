@@ -1,0 +1,44 @@
+BISY011 (Log Table)
+
+[ COLUMN ]
+----------------------------------------------------------------
+NAME                          TYPE                LENGTH
+----------------------------------------------------------------
+COLLECTOR_NAME                VARCHAR             40
+COLLECTOR_ADDR                IPV4                15
+COLLECTOR_OFFSET_STRING       VARCHAR             23
+SNO                           LONG                20
+COMCD                         VARCHAR             5
+SUCD                          VARCHAR             5
+INOUTDT                       VARCHAR             8
+BRCD                          VARCHAR             5
+STYCD                         VARCHAR             20
+MAINSTYCD                     VARCHAR             20
+YSCD                          VARCHAR             10
+SOJAE                         VARCHAR             10
+ITEM                          VARCHAR             10
+SQTY                          INTEGER             11
+SILAMT                        LONG                20
+INQTY                         LONG                20
+OUTQTY                        LONG                20
+DESIGNER                      VARCHAR             20
+EMPNAME                       VARCHAR             20
+PHOTOPATH                     VARCHAR             100
+DIMAGEPATH                    VARCHAR             100
+TAGPRI                        LONG                20
+STAGPRI                       LONG                20
+RESEQ                         VARCHAR             2
+CREATEDATE                    DATETIME            31
+MRGU                          VARCHAR             1
+SHTP                          VARCHAR             100
+MAINDIMAGEPATH                VARCHAR             100
+
+[ INDEX ]
+----------------------------------------------------------------
+NAME                          TYPE                COLUMN
+----------------------------------------------------------------
+IDX_BISY011_COMCD             LSM                 COMCD
+IDX_BISY011_SUCD              LSM                 SUCD
+IDX_BISY011_INOUTDT           LSM                 INOUTDT
+IDX_BISY011_BRCD              LSM                 BRCD
+IDX_BISY011_STYCD             LSM                 STYCD

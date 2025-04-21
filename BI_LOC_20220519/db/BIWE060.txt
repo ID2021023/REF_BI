@@ -1,0 +1,38 @@
+BIWE060 (Log Table)
+
+[ COLUMN ]
+----------------------------------------------------------------
+NAME                          TYPE                LENGTH
+----------------------------------------------------------------
+COLLECTOR_NAME                VARCHAR             40
+COLLECTOR_ADDR                IPV4                15
+COLLECTOR_OFFSET_STRING       VARCHAR             23
+COMCD                         VARCHAR             5
+SUCD                          VARCHAR             5
+BRCD                          VARCHAR             5
+SNO                           LONG                20
+YYYY                          VARCHAR             4
+MM                            VARCHAR             2
+WEEK                          VARCHAR             2
+FROM_SALEDT                   VARCHAR             8
+TO_SALEDT                     VARCHAR             8
+MEMP                          VARCHAR             10
+ERPNM                         VARCHAR             20
+VDCD                          VARCHAR             5
+VDSNM                         VARCHAR             50
+BIRTH                         VARCHAR             8
+HNAME                         VARCHAR             30
+PLNAMT                        LONG                20
+NOWAMT                        LONG                20
+LASTAMT                       LONG                20
+WEEKRATE                      VARCHAR             10
+MONSUMAMT                     LONG                20
+LASTMONSUMAMT                 LONG                20
+ENDMONAMT                     LONG                20
+MONRATE                       VARCHAR             10
+MONSUMPLNAMT                  VARCHAR             10
+MONAVG                        VARCHAR             10
+MS                            VARCHAR             10
+TEMP_SAVE                     VARCHAR             5
+CREATEDATE                    DATETIME            31
+MVDCD                         VARCHAR             5
