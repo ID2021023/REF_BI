@@ -73,10 +73,10 @@ exports.getSalesLineCharData = (req, res) => {
     let lastMonth12 = moment(year + month + "01").subtract(12, 'month').format("YYYYMM")
 
     // 월 매출비교 그래프(월간,누적)
-    let sql = "SELECT SUBSTR(SALEYY||SALEMM,3,6) SALEMM, SUM(LTSAMT) LTSAMT, SUM(TSAMT) TSAMT FROM BISH041 "
+    let sql = "SELECT SUBSTR(CONCAT(SALEYY, SALEMM), 3, 6) SALEMM, SUM(LTSAMT) LTSAMT, SUM(TSAMT) TSAMT FROM BISH041 "
     sql += "WHERE " + tabType + " = '" + selectedCODE + "' "
     sql += "AND VDCD = '" + store + "' "
-    sql += "AND SALEYY||SALEMM BETWEEN '" + lastMonth12 + "' AND '" + year + month + "' "
+    sql += "AND CONCAT(SALEYY, SALEMM BETWEEN) '" + lastMonth12 + "' AND '" + year + month + "' "
     sql += "AND CREATEDATE = (SELECT MAX(CREATEDATE) FROM BISH041) ";
     sql += "GROUP BY SALEMM "
     sql += "ORDER BY SALEMM"

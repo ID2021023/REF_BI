@@ -837,9 +837,9 @@ exports.getSalesTotal = (req, res) => {
         month = "0" + month
     }
     let jyear = Number(year-1).toString()
-    let sql = "SELECT SUM(NVL(SILAMT, 0)) SILAMT,  "
-    sql += "       SUM(NVL(J_SILAMT, 0)) JSILAMT, "
-    sql += "       SUCD, DECODE(SUCD,'1',1,'4',2,'3',3,'12',4,'21',5) AS SORT "
+    let sql = "SELECT SUM(NVL(derived_table.SILAMT, 0)) SILAMT,  "
+    sql += "       SUM(NVL(derived_table.J_SILAMT, 0)) JSILAMT, "
+    sql += "       derived_table.SUCD, DECODE(derived_table.SUCD,'1',1,'4',2,'3',3,'12',4,'21',5) AS SORT "
     sql += "FROM ( "
     sql += "        SELECT SUBSTR(SALEDT, 1, 6) SALEDT, "
     sql += "               SUM(SILAMT) SILAMT, "
@@ -860,7 +860,7 @@ exports.getSalesTotal = (req, res) => {
     sql += "        AND    SUCD IN ('1', '12', '4', '3', '21', '5') "
     sql += "        AND    CREATEDATE = (SELECT MAX(CREATEDATE) FROM BISL070) "
     sql += "        GROUP BY SALEDT, SUCD "
-    sql += "     )  "
+    sql += "     )  AS derived_table "
     sql += "GROUP BY SUCD, SORT "
     sql += "ORDER BY SORT "
     

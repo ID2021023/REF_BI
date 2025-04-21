@@ -31,11 +31,6 @@ exports.getRegionData = (req, res) => {
 
     // 지역 셀렉박스
     let sql = "SELECT CASE WHEN RENNM IS NULL THEN '지역없음' ELSE RENNM END RENNM, COUNT(*) CNT FROM BISH010 "
-    // if(selectedCODE == "IT" || selectedCODE == "SO") {
-    // sql += "WHERE (" + tabType + " = '" + selectedCODE +  "' OR SUCD = '21') "
-    // } else {
-    // sql += "WHERE " + tabType + " = '" + selectedCODE +  "' "  
-    // }
     sql += "WHERE " + tabType + " = '" + selectedCODE +  "' "  
     if(choice == 1) {
     sql += "AND VDFLR = '" + date + "' "
@@ -77,11 +72,6 @@ exports.getSelectRegionData = (req, res) => {
     
     // 매장형태 셀렉박스
     let sql = "SELECT CASE WHEN RENNM IS NULL THEN '지역없음' ELSE RENNM END RENNM, COUNT(*) CNT FROM BISH010 "
-    // if(selectedCODE == "IT" || selectedCODE == "SO") {
-    // sql += "WHERE (" + tabType + " = '" + selectedCODE +  "' OR SUCD = '21') "
-    // } else {
-    // sql += "WHERE " + tabType + " = '" + selectedCODE +  "' "  
-    // }
     sql += "WHERE " + tabType + " = '" + selectedCODE +  "' "  
     if (selectRegion != "전국") {
     sql += "AND RENNM = '" + selectRegion + "' "
@@ -132,11 +122,6 @@ exports.getStoreSUData = (req, res) => {
 
     // 사업부 구분
     let sql = "SELECT SUCD, COUNT(SUCD) CNT FROM BISH010 "
-    // if(selectedCODE == "IT" || selectedCODE == "SO") {
-    //   sql += "WHERE (" + tabType + " = '" + selectedCODE +  "' OR SUCD = '21') "
-    // } else {
-    //   sql += "WHERE " + tabType + " = '" + selectedCODE +  "' "  
-    // }
     sql += "WHERE " + tabType + " = '" + selectedCODE +  "' "  
     if (selectRegion != "전국") {
     sql += "AND RENNM = '" + selectRegion + "' "
@@ -179,11 +164,6 @@ exports.getStoreTypeData = (req, res) => {
     
     // 유형별 선택 > 매장구분 선택 > 3번째 셀렉박스 옵션
     let sql = "SELECT SHGUNM, COUNT(SHGUNM) CNT FROM BISH010 "
-    // if(selectedCODE == "IT" || selectedCODE == "SO") {
-    // sql += "WHERE (" + tabType + " = '" + selectedCODE +  "' OR SUCD = '21') "
-    // } else {
-    // sql += "WHERE " + tabType + " = '" + selectedCODE +  "' "  
-    // }
     sql += "WHERE " + tabType + " = '" + selectedCODE +  "' "  
     if (selectRegion != "전국") {
     sql += "AND RENNM = '" + selectRegion + "' "
@@ -230,11 +210,6 @@ exports.getStoreOptionData = (req, res) => {
 
     // 유형별 선택 > 매장형태 선택 > 3번째 셀렉박스 옵션
     let sql = "SELECT SHTPNM, COUNT(SHTPNM) CNT FROM BISH010 "
-    // if(selectedCODE == "IT" || selectedCODE == "SO") {
-    // sql += "WHERE (" + tabType + " = '" + selectedCODE +  "' OR SUCD = '21') "
-    // } else {
-    // sql += "WHERE " + tabType + " = '" + selectedCODE +  "' "  
-    // }
     sql += "WHERE " + tabType + " = '" + selectedCODE +  "' "  
     if (selectRegion != "전국") {
     sql += "AND RENNM = '" + selectRegion + "' "
@@ -285,11 +260,6 @@ exports.getSelectVDCDStoreInfo = (req, res) => {
 
     // 모든 조건 선택후 매출합계를 위한 매장코드 셀렉
     let sql = "SELECT VDCD, VDSNM, SHGU, SHGUNM, SHTP, SHTPNM, RENCD, RENNM, ZIPCODE, ADDR1, ADDR2, TELNO, LAT, LNG FROM BISH010 "
-    // if(selectedCODE == "IT" || selectedCODE == "SO") {
-    // sql += "WHERE (" + tabType + " = '" + selectedCODE +  "' OR SUCD = '21') "
-    // } else {
-    // sql += "WHERE " + tabType + " = '" + selectedCODE +  "' "  
-    // }
     sql += "WHERE " + tabType + " = '" + selectedCODE +  "' "  
     if (selectRegion != "전국") {
     if (selectRegion == "지역없음") {

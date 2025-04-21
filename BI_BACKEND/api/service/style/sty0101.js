@@ -409,24 +409,6 @@ exports.getInOutDt = (req, res) => {
     sql += "WHERE STYCD = '" + STYCODE + "' "
   }
   sql += ")"
-
-  // let sql = "SELECT MIN(INOUTDT) MIN_INOUTDT FROM ( "
-  // sql += "SELECT SUBSTR(MIN(INOUTDT),5,2)||'/'||SUBSTR(MIN(INOUTDT),7,2) INOUTDT FROM BISY021 "
-  // if(selectStyle == 0) {
-  //   sql += "WHERE MAINSTYCD = '" + KINDOFSTYLE[0] + "' "
-  // } else {
-  //   sql += "WHERE STYCD = '" + STYCODE + "' "
-  // }
-  // sql += "AND SQTY > 0 "
-  // sql += "UNION ALL "
-  // sql += "SELECT SUBSTR(MIN(OUTDT),5,2)||'/'||SUBSTR(MIN(OUTDT),7,2) INOUTDT FROM BISY021 "
-  // if(selectStyle == 0) {
-  //   sql += "WHERE MAINSTYCD = '" + KINDOFSTYLE[0] + "' "
-  // } else {
-  //   sql += "WHERE STYCD = '" + STYCODE + "' "
-  // }
-  // sql += ")"
-
     
   axios.get(db.DB_URL + '?q=' + encodeURIComponent(sql)).then(x => x.data).then(reault => res.send(reault))
 };

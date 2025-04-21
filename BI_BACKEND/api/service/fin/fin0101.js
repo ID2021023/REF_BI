@@ -86,44 +86,7 @@ exports.getCumulativeData = (req, res) => {
     let monthStartDate = req.query.monthStartDate;
 
     // 당일 매출, 당일 매출 목표, 월 누적매출, 월 매출 목표,
-    /*
-    let sql = "SELECT SUNM, " + tabType + " MCODE, ";
-    sql += "       SUM(SALE_YEAR_TOT) AS SALE_YEAR_TOT, SUM(YEAR_AMT) AS YEAR_AMT,  ";
-    sql += "       SUM(SALE_MONTH_TOT) AS SALE_MONTH_TOT, SUM(MONTH_AMT) AS MONTH_AMT, ";
-    sql += "       SUM(SALE_TOT) AS SALE_TOT, SUM(AMT) AS AMT ";
-    sql += "FROM   ( ";
-    sql += "        SELECT SUNM, " + tabType + ", SALE_TOT AS SALE_YEAR_TOT, AMT AS YEAR_AMT, ";
-    sql += "               0 AS SALE_MONTH_TOT, 0 AS MONTH_AMT, 0 AS SALE_TOT, 0 AS AMT ";
-    sql += "        FROM   ( SELECT SUNM, " + tabType + ", ";
-    sql += "                 SUM((JAMT+DCAMT+GAMT+ADVDEPAMT))AS SALE_TOT, SUM(TARGETAMT) AMT FROM BISL061 ";
-    sql += "        WHERE " + tabType + " IN ('1','12','4','3','21','5') ";
-    sql += "        AND SALEDT BETWEEN '" + monthStartDate + "' AND '" + date + "' ";
-    sql += "        AND CREATEDATE = (SELECT MAX(CREATEDATE) FROM BISL061) ";
-    sql += "        GROUP BY SUNM, " + tabType + ") ";
-    sql += "        UNION ALL ";
-    sql += "        SELECT SUNM, " + tabType + ", ";
-    sql += "               0 AS SALE_YEAR_TOT, 0 AS YEAR_AMT, ";
-    sql += "               SALE_MONTH_TOT, TARGETAMT AS MONTH_AMT, ";
-    sql += "               0 AS SALE_TOT, 0 AS AMT ";
-    sql += "        FROM   ( SELECT SUNM, " + tabType + ", ";
-    sql += "                SUM((JAMT+DCAMT+GAMT+ADVDEPAMT)) AS SALE_MONTH_TOT, SUM(TARGETAMT) TARGETAMT FROM BISL061 ";
-    sql += "        WHERE " + tabType + " IN ('1','12','4','3','21','5')  ";
-    sql += "        AND SALEDT BETWEEN TO_CHAR(ADD_TIME(SYSDATE, '0/0/-1 0:0:0'),'YYYYMM')||'01' AND TO_CHAR(ADD_TIME(SYSDATE, '0/0/-1 0:0:0'),'YYYYMMDD') ";
-    sql += "        AND CREATEDATE = (SELECT MAX(CREATEDATE) FROM BISL061) ";
-    sql += "        GROUP BY SUNM, " + tabType + ") ";
-    sql += "        UNION ALL ";
-    sql += "        SELECT SUNM, " + tabType + ", ";
-    sql += "               0 AS SALE_YEAR_TOT, 0 AS YEAR_AMT, ";
-    sql += "               0 AS SALE_MONTH_TOT, 0 AS MONTH_AMT, ";
-    sql += "               SALE_TOT, AMT ";
-    sql += "        FROM   ( SELECT SUNM, " + tabType + ", ";
-    sql += "                SUM((JAMT+DCAMT+GAMT+ADVDEPAMT))AS SALE_TOT, SUM(TARGETAMT) AMT FROM BISL061 ";
-    sql += "        WHERE " + tabType + " IN ('1','12','4','3','21','5')  ";
-    sql += "        AND SALEDT = '" + date + "' ";
-    sql += "        AND CREATEDATE = (SELECT MAX(CREATEDATE) FROM BISL061) ";
-    sql += "        GROUP BY SUNM, " + tabType + ") ";
-    sql += ") GROUP BY SUNM, " + tabType + "";
-    */
+    
     let sql = "SELECT SUCD MCODE, ";
     sql += "       SUM(SALE_YEAR_TOT) AS SALE_YEAR_TOT, ";
     sql += "       SUM(YEAR_AMT) AS YEAR_AMT, ";

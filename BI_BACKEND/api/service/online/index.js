@@ -633,7 +633,7 @@ exports.getSaleByBrdDetailData = (req, res) => {
     sql += "                            END TOTSILAMT , ";
     sql += "                            DECODE(BRCD, 'MI', 1, 'MO', 4, 'IT', 2, 'IN', 5, 'SO', 3) SORT ";
     sql += "                        FROM   BION060 ";
-    sql += "                        WHERE SALEDT BETWEEN SUBSTR(TO_CHAR(SYSDATE,'YYYYMMDD'),1,4)||'0101' AND TO_CHAR(ADD_TIME(SYSDATE, '0/0/-1 0:0:0'),'YYYYMMDD') ";
+    sql += "                        WHERE SALEDT BETWEEN CONCAT( SUBSTR(TO_CHAR(SYSDATE,'YYYYMMDD'),1,4), '0101') AND TO_CHAR(ADD_TIME(SYSDATE, '0/0/-1 0:0:0'),'YYYYMMDD') ";
     sql += "                        AND    CREATEDATE = (SELECT MAX(CREATEDATE) FROM BION060) ) ";
     sql += "                GROUP BY BRCD, SALEDT, SORT )) ";
     sql += "GROUP BY BRCD, SORT ";
@@ -775,7 +775,7 @@ exports.getBaseSaleList = (req, res) => {
     sql += "                       0 AS YEARTOT , 0 AS YEARJASA , 0 AS YEAROUT , ";
     sql += "                       DECODE(BRCD, 'MI', '1', 'MO', '4', 'IT', '2', 'IN', '5', 'SO', '3') AS SORT ";
     sql += "                FROM   BION060 ";
-    sql += "                WHERE SALEDT BETWEEN SUBSTR('"+selectDate+"',1,6)||'01' AND '"+selectDate+"' ";
+    sql += "                WHERE SALEDT BETWEEN CONCAT( SUBSTR('"+selectDate+"',1,6), '01') AND '"+selectDate+"' ";
     sql += "                AND    CREATEDATE = (SELECT MAX(CREATEDATE) FROM BION060) ";
     sql += "                UNION ALL ";
     sql += "                SELECT BRCD , 0 AS DAYTOT , 0 AS DAYJASAS , 0 AS DAYOUT , ";
@@ -791,7 +791,7 @@ exports.getBaseSaleList = (req, res) => {
     sql += "                       END YEAROUT , ";
     sql += "                       DECODE(BRCD, 'MI', '1', 'MO', '4', 'IT', '2', 'IN', '5', 'SO', '3') AS SORT ";
     sql += "                FROM   BION060 ";
-    sql += "                WHERE SALEDT BETWEEN SUBSTR('"+selectDate+"',1,4)||'0101' AND '"+selectDate+"' ";
+    sql += "                WHERE SALEDT BETWEEN CONCAT( SUBSTR('"+selectDate+"',1,4), '0101') AND '"+selectDate+"' ";
     sql += "                AND    CREATEDATE = (SELECT MAX(CREATEDATE) FROM BION060)) ";
     sql += "        WHERE  BRCD <> 'SO' ";
     sql += "        GROUP BY BRCD, SORT ";
