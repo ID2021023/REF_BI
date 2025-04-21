@@ -1,0 +1,96 @@
+version: '3.8'
+# 시작 : 
+#   docker compose up -d
+# 종료 :
+#   docker compose doen -v --remove-orphans
+# 재시작 : 
+#   docker-compose down -v --remove-orphans && docker-compose up -d --build --force-recreate
+# DB 설정 초기화 재시작 : 
+#   docker-compose down -v --remove-orphans && rm -rf data/mysql/* && docker-compose up -d --build --force-recreate
+services:
+  mysql:
+    image: mysql:8.0
+    platform: linux/amd64
+    container_name: ssbi_mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: ss_bi
+      MYSQL_USER: ss_bi
+      MYSQL_PASSWORD: ssb!
+      TZ: Asia/Seoul
+      LANG: C.UTF-8
+      MYSQL_INITDB_SKIP_TZINFO: 1
+    volumes:
+      - ./data/mysql:/var/lib/mysql
+      - ./db/init:/docker-entrypoint-initdb.d
+      - ./db/conf.d:/etc/mysql/conf.d
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --skip-character-set-client-handshake
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-prootpass"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  phpmyadmin:
+    image: arm64v8/phpmyadmin:latest
+    platform: linux/arm64/v8
+    container_name: ssbi_phpmyadmin
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: ssbi_mysql
+      PMA_PORT: 3306
+      PMA_USER: ss_bi
+      PMA_PASSWORD: ssb!
+      UPLOAD_LIMIT: 300M
+      TZ: Asia/Seoul
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+  # backend:
+  #   build:
+  #     context: ./BI_BACKEND
+  #     dockerfile: Dockerfile
+  #   container_name: ssbi_backend
+  #   restart: always
+  #   ports:
+  #     - "3000:3000"
+  #   volumes:
+  #     - ./BI_BACKEND:/app
+  #     - /app/node_modules
+  #   environment:
+  #     - NODE_ENV=development
+  #     - PORT=3000
+  #   depends_on:
+  #     mysql:
+  #       condition: service_healthy
+  #   command: npm run start
+
+  # frontend:
+  #   build:
+  #     context: ./BI_FRONT
+  #     dockerfile: Dockerfile
+  #   container_name: ssbi_frontend
+  #   restart: always
+  #   ports:
+  #     - "8081:8080"
+  #   volumes:
+  #     - ./BI_FRONT:/app
+  #     - /app/node_modules
+  #   environment:
+  #     - NODE_ENV=development
+  #     - PORT=8080
+  #   command: npm run dev
+
+volumes:
+  mysql_data:
+    name: ssbi_mysql_data
+
+networks:
+  default:
+    name: ssbi_network
