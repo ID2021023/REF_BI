@@ -6,7 +6,7 @@ version: '3.8'
 # 재시작 : 
 #   docker-compose down -v --remove-orphans && docker-compose up -d --build --force-recreate
 # DB 설정 초기화 재시작 : 
-#   docker-compose down -v --remove-orphans && rm -rf data/mysql/* && docker-compose up -d --build --force-recreate
+#   docker-compose down -v --remove-orphans && \rm -rf data/mysql/* && touch data/mysql/.gitkeep && docker-compose up -d --build --force-recreate
 services:
   mysql:
     image: mysql:8.0
